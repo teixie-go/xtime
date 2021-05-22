@@ -100,11 +100,6 @@ func Parse(t interface{}) (time.Time, error) {
 
 // format, e.g. YYYY-mm-dd HH:ii:ss
 func Format(t time.Time, fmtStr string) string {
-	exists, err := regexp.Match("[YymdHis]+", []byte(fmtStr))
-	if err == nil && !exists {
-		return t.Format(fmtStr)
-	}
-
 	timeStr := t.String()
 	o := map[string]string{
 		"Y+": timeStr[0:4],
