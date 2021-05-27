@@ -78,6 +78,11 @@ func UnixZero() time.Time {
 	return time.Date(1970, 1, 1, 0, 0, 0, 0, GetLocation())
 }
 
+// unix first second
+func UnixFirst() time.Time {
+	return time.Date(1970, 1, 1, 0, 0, 1, 0, GetLocation())
+}
+
 // parse
 func Parse(t interface{}) (time.Time, error) {
 	if t == nil {
